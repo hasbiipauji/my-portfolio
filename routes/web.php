@@ -2,6 +2,7 @@
 
 use App\Models\ContactMessage;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +20,9 @@ Route::get('/', function () {
     return view('portfolio.main');
 });
 
-Route::get('/test', function () {
-    return view('test');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 Route::resource('contact', ContactController::class);
+Route::resource('project', ProjectController::class);
