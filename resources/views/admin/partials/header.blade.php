@@ -45,7 +45,7 @@
                 <li class="text-sm leading-normal">
                   <a class="opacity-50 text-slate-700" href="javascript:;">Pages</a>
                 </li>
-                <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']" aria-current="page">Dashboard</li>
+                <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']" aria-current="page">@yield('nama-halaman')</li>
               </ol>
             </nav>
   
