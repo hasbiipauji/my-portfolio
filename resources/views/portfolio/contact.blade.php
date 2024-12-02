@@ -13,11 +13,11 @@
                         </div>
                         <div class="w-full px-4 mb-8">
                             <label for="email" class=" font-bold text-primary text-sm lg:text-base">Email</label>
-                            <input type="email" name="email" placeholder="Email" class="w-full p-2 rounded-lg focus:outline-none focus:border-primary bg-slate-200 text-sm lg:text-base mt-1">
+                            <input type="email" name="email" placeholder="Email" class="w-full bg-slate-200  p-2 rounded-lg text-primary focus:ring-1 focus:ring-blue-500 focus:outline-none focus:border-primary text-sm lg:text-base mt-1">
                         </div>
                         <div class="w-full px-4 mb-8">
                             <label for="message" class=" font-bold text-primary text-sm lg:text-base">Message</label>
-                            <textarea name="message" id="" placeholder="Message" class="w-full p-2 bg-slate-200 rounded-lg focus:outline-none focus:border-primary h-32 text-sm lg:text-base mt-1"></textarea>
+                            <textarea name="message" id="" placeholder="Message" class="w-full bg-slate-200  p-2 rounded-lg text-primary focus:ring-1 focus:ring-blue-500 focus:outline-none focus:border-primary text-sm lg:text-base mt-1 h-32"></textarea>
                         </div>
     
                         <div class="w-full px-4">

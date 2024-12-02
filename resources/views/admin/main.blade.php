@@ -23,7 +23,6 @@
       @include('admin.partials.footer')
 
 
-
   </body>
   @include('admin.partials.script')
 </html>

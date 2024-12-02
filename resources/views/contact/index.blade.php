@@ -64,7 +64,7 @@
                             @csrf
                             @method('delete')
                             {{-- <button type="submit" class="bg-slate-600 px-3 py-2 rounded-lg shadow-lg text-white text-xs hover:bg-slate-800 ease-in-out transition-all duration-300">Hapus</button> --}}
-                            <button type="submit" class="bg-slate-600 text-xs px-3 py-2 rounded-lg shadow-lg text-white hover:bg-slate-800 ease-in-out transition-all duration-300">Hapus</button>
+                            <button type="submit" class="bg-slate-600 !important text-xs px-3 py-2 rounded-lg shadow-lg text-white hover:bg-slate-800 ease-in-out transition-all duration-300">Hapus</button>
                         </form>
                     </td>
                   </tr>
