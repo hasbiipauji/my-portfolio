@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\ContactMessage;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('portfolio.main');
 });
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+Route::resource('contact', ContactController::class);
