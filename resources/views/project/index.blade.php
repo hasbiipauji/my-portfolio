@@ -11,7 +11,11 @@
       <div class="flex-none w-full max-w-full px-3">
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
           <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-            <a href="" class="px-3 py-2 text-xs bg-blue-500 rounded-lg shadow-lg text-white hover:bg-blue-600 ease-in-out transition-all duration-300 mb-10">Tambah</a>
+            {{-- <a href="" class="px-3 py-2 text-xs bg-blue-500 rounded-lg shadow-lg text-white hover:bg-blue-600 ease-in-out transition-all duration-300 mb-10">Tambah</a> --}}
+            @include('project.create')
+            <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-300 transition-all ease-in-out" type="button">
+              tambah
+            </button>
             <h6 class="mt-6">Project table</h6>
           </div>
           <div class="flex-auto px-0 pt-0 pb-2">
@@ -43,7 +47,8 @@
                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                       <div class="flex px-2 py-1">
                         <div class="flex flex-col justify-center">
-                          <h6 class="mb-0 text-sm leading-normal">{{ $item->image }}</h6>
+                          {{-- <h6 class="mb-0 text-sm leading-normal">{{ $item->image }}</h6> --}}
+                          <img src="{{ asset('img/'.$item->image) }}" alt="" class="w-20">
                         </div>
                       </div>
                     </td>
