@@ -48,36 +48,41 @@
                       <div class="flex px-2 py-1">
                         <div class="flex flex-col justify-center">
                           {{-- <h6 class="mb-0 text-sm leading-normal">{{ $item->image }}</h6> --}}
-                          <img src="{{ asset('img/'.$item->image) }}" alt="" class="w-20">
+                          <img src="{{ asset('img/'.$item->image) }}" alt="" class="w-24">
                         </div>
                       </div>
                     </td>
                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                         <div class="flex px-2 py-1">
                             <div class="flex flex-col justify-center">
-                                <h6 class="mb-0 text-sm leading-normal">{{ $item->title }}</h6>
+                                <h6 class="mb-0 text-sm leading-normal">{{ Str::limit($item->title, 20, '...')  }}</h6>
                             </div>
                         </div>
                     </td>
                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                         <div class="flex px-2 py-1">
                             <div class="flex flex-col justify-center">
-                                <p class="mb-0 text-xs leading-normal">{{ $item->description }}</p>
+                                <p class="mb-0 text-xs leading-normal">{{Str::limit($item->description, 40, '...')  }}</p>
                             </div>
                         </div>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight text-slate-400">{{ $item->link_code }}</span>
+                      <span class="text-xs font-semibold leading-tight text-slate-400">{{ Str::limit($item->link_code, 20, '...') }}</span>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight text-slate-400">{{ $item->link_demo}}</span>
+                      <span class="text-xs font-semibold leading-tight text-slate-400">{{ Str::limit($item->link_demo, 20, '...') }}</span>
                     </td>
                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                        {{-- <form action="{{ route('contact.destroy', $item->id) }}" method="POST">
-                            @csrf
-                            @method('delete') --}}
-                            <button type="submit" class="bg-slate-600 text-xs px-3 py-2 rounded-lg shadow-lg text-white hover:bg-slate-800 ease-in-out transition-all duration-300">Hapus</button>
-                        </form>
+                      {{-- di bawah ini yaitu 'project' => $item untuk mengirimkan data dari loop di atas untuk bisa ditangkap di view edit dengan id sebagai parameter --}}
+                      @include('project.edit', ['project' => $item])
+                      <form action="{{ route('project.destroy', $item->id) }}" method="POST">
+                        <button data-modal-target="crud-modal-{{ $item->id }}" data-modal-toggle="crud-modal-{{ $item->id }}" class="px-3 py-2 bg-slate-600 text-xs text-white rounded-lg hover:bg-slate-800 ease-in-out transition-all duration-300" type="button">
+                          Edit
+                        </button>
+                          @csrf
+                          @method('delete')
+                          <button type="submit" class="bg-red-600 text-xs px-3 py-2 rounded-lg shadow-lg text-white hover:bg-red-700 ease-in-out transition-all duration-300">Hapus</button>
+                      </form>
                     </td>
                   </tr>
                 </tbody>

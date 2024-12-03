@@ -115,22 +115,24 @@
                 <p class="text-slate-500 text-sm lg:text-base pt-7 mb-4 lg:mb-8">Below are some of the projects I have developed, tailored to meet the specific needs of each user. Each project was created with a focus on functionality, performance, and ease of use.</p>
             </div>
 
-            <div class="w-full flex flex-wrap justify-center lg:mx-auto px-4 mt-4 xl:w-9/12 xl:mx-auto gap-x-4">
-                <div class="pb-5 md:w-5/12 bg-white rounded-lg shadow-xl">
-                    <div class="aspect-[3/2] rounded-md overflow-hidden relative group">
-                        <div class="w-full h-full absolute inset-0 transition-transform duration-500 ease-in-out transform group-hover:scale-110">
-                            <img src="{{ asset('assets/img/absensi.jpg') }}" alt="" class="w-full h-full transition-all duration-500 ease-in-out pb-16">
+            
+            <div class="flex flex-wrap justify-center gap-8 px-4 mt-8">
+                @foreach ($tampilProject as $item)    
+                    <div class="w-full md:w-5/12 lg:w-1/3 bg-white rounded-lg shadow-xl pb-5">
+                        <div class="aspect-[3/2] rounded-t-lg overflow-hidden relative group">
+                            <div class="w-full h-full absolute inset-0 transition-transform duration-500 ease-in-out transform group-hover:scale-110">
+                                <img src="{{ asset('img/'.$item->image) }}" alt="" class="w-full h-full transition-all duration-500 ease-in-out object-cover object-center">
+                            </div>
                         </div>
-                    </div>
-                    <h2 class="text-base font-medium py-2 px-3 text-center p-4 lg:text-lg lg:font-semibold">Aplikasi Absensi Berbasis Web di PT. Uspa Media Nusantara</h2>
-                    <p class="text-sm text-slate-400 px-3 py-4 p-4">This application was developed for employees using HTML, bootstrap, JavaScript, Laravel dan Mysql</p>
-                    <div class="flex justify-center items-center gap-x-3 mt-4">
-                        <a href="" class="px-3 py-2 text-white bg-primary rounded-lg shadow-lg text-sm hover:bg-secondary transition duration-300 ease-out active:scale-90 lg:text-base"> Code <i class="fa-solid fa-arrow-right pl-2"></i></a>
-                        <a href="" class="px-3 py-2 text-white bg-primary rounded-lg shadow-lg text-sm hover:bg-secondary transition duration-300 ease-out active:scale-90 lg:text-base">Demo<i class="fa-regular fa-eye pl-2 self-center"></i></a>
-                    </div>
-                </div>
-                
-            </div>
+                        <h2 class="text-base font-medium py-2 px-3 text-center p-4 lg:text-lg lg:font-semibold">{{ $item->title }}</h2>
+                        <p class="text-sm text-slate-400 px-3 py-4 p-4">{{ Str::limit($item->description, 200, '...') }}</p>
+                        <div class="flex justify-center items-center gap-x-3 mt-4">
+                            <a href="{{ $item->link_code }}" class="px-3 py-2 text-white bg-primary rounded-lg shadow-lg text-sm hover:bg-secondary transition duration-300 ease-out active:scale-90 lg:text-base"> Code <i class="fa-solid fa-arrow-right pl-2"></i></a>
+                            <a href="{{ $item->link_demo }}" class="px-3 py-2 text-white bg-primary rounded-lg shadow-lg text-sm hover:bg-secondary transition duration-300 ease-out active:scale-90 lg:text-base">Demo<i class="fa-regular fa-eye pl-2 self-center"></i></a>
+                        </div>
+                    </div>     
+                @endforeach
+            </div>            
         </div>
     </div>
 </section>
