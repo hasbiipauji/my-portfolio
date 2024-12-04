@@ -9,6 +9,42 @@
 <div class="w-full px-6 py-6 mx-auto">
     <div class="flex flex-wrap -mx-3">
       <div class="flex-none w-full max-w-full px-3">
+        @if(session()->has('success'))
+          <div class="w-full text-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 relative" role="alert">
+              <button id="close-success-alert" type="button" class="absolute top-4 right-2 text-green-500 hover:text-green-700 focus:outline-none">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  <span class="sr-only">Close alert</span>
+              </button>
+              <span class="font-medium block pr-8">Project berhasil ditambahkan</span>
+          </div>
+          @endif
+
+          @if(session()->has('update'))
+          <div class="w-full text-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 relative" role="alert">
+              <button id="close-success-alert" type="button" class="absolute top-4 right-2 text-green-500 hover:text-green-700 focus:outline-none">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  <span class="sr-only">Close alert</span>
+              </button>
+              <span class="font-medium block pr-8">Project berhasil diperbaharui</span>
+          </div>
+          @endif
+
+          @if(session()->has('delete'))
+          <div class="w-full text-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 relative" role="alert">
+              <button id="close-success-alert" type="button" class="absolute top-4 right-2 text-red-500 hover:text-red-700 focus:outline-none">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  <span class="sr-only">Close alert</span>
+              </button>
+              <span class="font-medium block pr-8">Project berhasil dihapus</span>
+          </div>
+          @endif
+
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
           <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
             {{-- <a href="" class="px-3 py-2 text-xs bg-blue-500 rounded-lg shadow-lg text-white hover:bg-blue-600 ease-in-out transition-all duration-300 mb-10">Tambah</a> --}}

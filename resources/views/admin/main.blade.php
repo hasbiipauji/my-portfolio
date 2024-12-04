@@ -25,4 +25,11 @@
 
   </body>
   @include('admin.partials.script')
+
+
+<script>
+  document.getElementById("close-success-alert").onclick = function() {
+    this.parentElement.style.display = "none";
+  };
+</script>
 </html>

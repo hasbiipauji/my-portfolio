@@ -72,7 +72,7 @@ class ProjectController extends Controller
         $project->update();
 
         // dd($project);
-        return redirect()->route('project.index')->with('success', 'Project berhasil diperbarui');
+        return redirect()->route('project.index')->with('update', 'Project berhasil diperbarui');
         
     }
 
@@ -82,6 +82,6 @@ class ProjectController extends Controller
         }
 
         $project->delete();
-        return redirect()->route('project.index')->with('success', 'data berhasil dihapus');
+        return redirect()->route('project.index')->with('delete', 'data berhasil dihapus');
     }
 }

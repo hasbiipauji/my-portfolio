@@ -28,6 +28,6 @@ class ContactController extends Controller
         $message = ContactMessage::findOrFail($id);
         $message->delete();
 
-        return back()->with('success', 'Pesan telah dihapus');
+        return back()->with('delete', 'Pesan telah dihapus');
     }
 }

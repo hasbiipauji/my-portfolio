@@ -1,3 +1,5 @@
+{{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+
 {{-- contact section start --}}
 <section id="contact" class="pt-16 pb-20 lg:pb-28">
     <div class="container">
@@ -7,6 +9,19 @@
                     @csrf
                     <div class="w-full md:mx-auto">
                         <h2 class="text-lg font-bold text-center lg:text-2xl pt-10 pb-4 text-primary">Send Me a Message</h2>
+
+                        @if(session()->has('success'))
+                        <div class="w-full text-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 relative" role="alert">
+                            <button id="close-success-alert" type="button" class="absolute top-4 right-2 text-green-500 hover:text-green-700 focus:outline-none">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                <span class="sr-only">Close alert</span>
+                            </button>
+                            <span class="font-medium block pr-8">Pesan berhasil dikirim</span>
+                        </div>
+                        @endif
+
                         <div class="w-full px-4 mb-8 flex flex-wrap mx-auto">
                             <label for="name" class="text-primary font-bold text-sm lg:text-base">Name</label>
                         <input type="text" name="name" placeholder="Name" class="w-full bg-slate-200  p-2 rounded-lg text-primary focus:ring-1 focus:ring-blue-500 focus:outline-none focus:border-primary text-sm lg:text-base mt-1">
