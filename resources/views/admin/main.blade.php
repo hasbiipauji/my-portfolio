@@ -28,8 +28,18 @@
 
 
 <script>
-  document.getElementById("close-success-alert").onclick = function() {
-    this.parentElement.style.display = "none";
-  };
+// untuk alert
+document.getElementById("close-success-alert").onclick = function() {
+  this.parentElement.style.display = "none";
+};
+
+// tombol untuk hapus
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("confirm-delete").addEventListener("click", function() {
+     document.getElementById("popup-delete").submit(); // Submit form
+    });
+});
 </script>
+
+
 </html>

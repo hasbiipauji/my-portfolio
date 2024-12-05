@@ -125,7 +125,7 @@
                     </div>
                     <div class="px-3 py-4">
                         <h2 class="text-base font-medium text-center p-4 lg:text-lg lg:font-semibold">{{ $item->title }}</h2>
-                        <p class="text-sm text-slate-400">{{ Str::limit($item->description, 200, '...') }}</p>
+                        <p class="text-sm text-slate-400 line-clamp-3">{{ $item->description }}</p>
                         <div class="flex justify-center items-center gap-x-3 mt-4">
                             <a href="{{ $item->link_code }}" class="px-3 py-2 text-white bg-primary rounded-lg shadow-lg text-sm hover:bg-secondary transition duration-300 ease-out active:scale-90 lg:text-base">
                                 Code <i class="fa-solid fa-arrow-right pl-2"></i>
@@ -185,10 +185,13 @@ typewriter1
 </script>
 
 <script>
-    document.getElementById("close-success-alert").onclick = function() {
+document.getElementById("close-success-alert").onclick = function() {
     this.parentElement.style.display = "none";
 };
+
 </script>
+
+
 
 </body>
 </html>
