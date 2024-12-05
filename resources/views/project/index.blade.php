@@ -49,7 +49,7 @@
           <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
             {{-- <a href="" class="px-3 py-2 text-xs bg-blue-500 rounded-lg shadow-lg text-white hover:bg-blue-600 ease-in-out transition-all duration-300 mb-10">Tambah</a> --}}
             @include('project.create')
-            <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-300 transition-all ease-in-out" type="button">
+            <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center duration-300 transition-all ease-in-out" type="button">
               tambah
             </button>
             <h6 class="mt-6">Project table</h6>
@@ -166,14 +166,5 @@
   @empty
   <h5 class="text-center p-8">Data Masih Kosong</h5>
   @endforelse
-
-<script>
-    // tombol untuk hapus
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("confirm-delete").addEventListener("click", function() {
-     document.getElementById("popup-delete").submit(); // Submit form
-    });
-});
-</script>
 
 @endsection
