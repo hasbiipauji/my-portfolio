@@ -5,7 +5,6 @@
 @endsection
 @section('content')
 
-
 <div class="w-full px-6 py-6 mx-auto">
     <div class="flex flex-wrap -mx-3">
       <div class="flex-none w-full max-w-full px-3">
@@ -163,8 +162,8 @@
       </div>
     </div>
 </div>
-  @empty
-  <h5 class="text-center p-8">Data Masih Kosong</h5>
-  @endforelse
+@empty
+<h5 class="text-center p-8">Data Masih Kosong</h5>
+@endforelse
 
 @endsection

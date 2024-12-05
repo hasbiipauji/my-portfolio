@@ -117,7 +117,7 @@
             
             <div class="flex flex-wrap justify-center gap-8 px-4 mt-8">
                 @foreach ($tampilProject as $item)
-                <div class="w-full md:w-5/12 lg:w-[31%] bg-white rounded-lg shadow-xl pb-5">
+                <div class="w-full md:w-5/12 lg:w-[30%] bg-white rounded-lg shadow-xl pb-5">
                     <div class="aspect-[3/2] rounded-t-lg overflow-hidden relative group">
                         <div class="w-full h-full absolute inset-0 transition-transform duration-500 ease-in-out transform group-hover:scale-110">
                             <img src="{{ asset('img/'.$item->image) }}" alt="" class="w-full h-full transition-all duration-500 ease-in-out object-cover object-center">
