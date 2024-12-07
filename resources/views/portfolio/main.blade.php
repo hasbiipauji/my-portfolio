@@ -188,10 +188,7 @@ typewriter1
 document.getElementById("close-success-alert").onclick = function() {
     this.parentElement.style.display = "none";
 };
-
 </script>
-
-
 
 </body>
 </html>

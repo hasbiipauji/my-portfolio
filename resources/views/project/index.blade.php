@@ -111,7 +111,10 @@
                       {{-- di bawah ini yaitu 'project' => $item untuk mengirimkan data dari loop di atas untuk bisa ditangkap di view edit dengan id sebagai parameter --}}
                       @include('project.edit', ['project' => $item])
                       <form action="{{ route('project.destroy', $item->id) }}" method="POST" id="popup-delete">
-
+                        {{-- <a href="#" class="px-3 py-2 bg-cyan-600 text-white rounded-lg shadow-lg text-xs hover:bg-cyan-700 ease-in-out transition-all duration-300">Detail</a> --}}
+                        {{-- tombol detail  --}}
+                        <a href="{{ route('project.show', $item) }}" class="px-3 py-2 bg-cyan-600 text-xs text-white rounded-lg hover:bg-cyan-700 ease-in-out transition-all duration-300">Detail</a>
+                        
                         {{-- tombol edit  --}}
                         <button data-modal-target="crud-modal-{{ $item->id }}" data-modal-toggle="crud-modal-{{ $item->id }}" class="px-3 py-2 bg-slate-600 text-xs text-white rounded-lg hover:bg-slate-800 ease-in-out transition-all duration-300" type="button">
                           Edit

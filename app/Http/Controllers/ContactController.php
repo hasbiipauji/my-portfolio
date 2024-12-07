@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\contactEmail;
 use App\Models\ContactMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -21,7 +23,14 @@ class ContactController extends Controller
 
         ContactMessage::create($validate);
 
+        Mail::to('hasbipauji817@gmail.com')
+            ->send(new contactEmail($validate));
+
         return back()->with('success', 'Pesan telah terkirim');
+    }
+
+    public function show(ContactMessage $contact){
+        return view('contact.show', compact('contact'));
     }
 
     public function destroy($id){

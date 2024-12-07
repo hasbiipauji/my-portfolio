@@ -66,7 +66,7 @@
                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                         <div class="flex px-2 py-1">
                             <div class="flex flex-col justify-center">
-                                <p class="mb-0 text-xs leading-normal line-clamp-2">{{ $item->message }}</p>
+                                <p class="mb-0 text-xs leading-normal ">{{Str::limit($item->message, 25, '...')  }}</p>
                             </div>
                         </div>
                     </td>
@@ -75,6 +75,7 @@
                       <div class="flex px-2 py-1">
                         <div class="flex flex-col justify-center items-center">
                           <form action="{{ route('contact.destroy', $item->id) }}" method="POST" id="popup-delete">
+                            <a href="{{ route('contact.show', $item) }}" class="px-3 py-2 bg-cyan-600 text-white rounded-lg shadow-lg text-xs hover:bg-cyan-700 ease-in-out transition-all duration-300">Detail</a>
                             @csrf
                             @method('delete')
                             {{-- tombol hapus  --}}

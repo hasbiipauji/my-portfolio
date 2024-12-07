@@ -44,6 +44,12 @@ class ProjectController extends Controller
         return redirect()->route('project.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
+    public function show($id){
+        $project = Project::findOrFail($id);
+        // dd($project);
+        return view('project.show', compact('project'));
+    }
+
     public function update(Request $request, Project $project){
         $request->validate([
             'image'         => 'nullable|mimes:png,jpg,jpeg|max:3084',
